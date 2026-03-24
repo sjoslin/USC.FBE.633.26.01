@@ -1,10 +1,10 @@
 ---
-title: Week 1 - Motivation + Environment
+title: Week 1 - Environment
 layout: default
 nav_order: 1
 ---
 
-# Week 1 - Motivation + Environment
+# Week 1 - Environment
 
 ## Overview
 
@@ -12,10 +12,9 @@ Everyone leaves with Claude Code running, API key in environment, VS Code connec
 
 ## Topics
 
-1. Why coding agents for empirical work?
-2. Agent architectures and guardrails
-3. Tools for finance: language models, code generation
-4. Setting up your development environment
+1. Agent architectures and guardrails
+2. Tools for finance: language models, code generation
+3. Setting up your development environment
 
 ## Readings
 
