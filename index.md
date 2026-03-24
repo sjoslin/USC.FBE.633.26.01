@@ -3,33 +3,57 @@ title: Home
 layout: home
 ---
 
-This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
+# FBE 633 - Coding Agents Module
 
-If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages.
+## Welcome
 
-More specifically, the created site:
+This is a **supplementary coding module** for the asset pricing theory course (FBE 633, second half of spring semester). 
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
+**What changed this year:** I'm converting 3 traditional lectures on empirical methods into **6 half-lecture coding sessions** focused on building practical implementation skills.
 
-Other than that, you're free to customize sites that you create with this template, however you like. You can easily change the versions of `just-the-docs` and Jekyll it uses, as well as adding further plugins.
+## Why This Matters
 
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
+This coding module complements the core theory course by giving you the **practical skills to implement** what you learn:
+- Translate theoretical equations into working code
+- Debug empirical implementation issues
+- Build maintainable, reproducible analysis pipelines
 
-To get started with creating a site, simply:
+Coding agents help bridge this gap by automating boilerplate code and debugging.
 
-1. click "[use this template]" to create a GitHub repository
-2. go to Settings > Pages > Build and deployment > Source, and select GitHub Actions
+## What You'll Get
 
-If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo) in the template README.
+- **Setup ready**: A fully configured development environment
+- **Coding agent skills**: Understand how to leverage AI-assisted coding
+- **Financial data access**: API integration for FRED and market data
+- **Python for finance**: Practical tools for asset pricing analysis
 
-----
+## Structure
 
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
+The main FBE 633 course (theory) resides on Brightspace. This module covers:
 
-[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
-[Jekyll]: https://jekyllrb.com
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
+| Week | Topic | Description |
+|--|----|--|
+| [Overview](overview) | Why coding agents | Connection to empirical work and replication project |
+| [Week 0](week_0) | Setup | Development environment configuration |
+| [Week 1](week_1) | Coding agents intro | Agent architectures and tool usage |
+| [Week 2](week_2) | Financial APIs | FRED, stock data, and data access |
+| [Week 3](week_3) | Python for finance | Pandas, NumPy, time series analysis |
+| [Week 4](week_4) | Agent frameworks | LangChain, AutoGen, implementation |
+| [Week 5](week_5) | Financial apps | Trading, risk, reporting agents |
+| [Week 6](week_6) | Advanced topics | Multi-agent systems and project work |
+
+## Instructor
+
+[Your Name Here]
+
+## Prerequisites
+
+- Familiarity with basic Python programming
+- No prior experience with coding agents required
+
+## Goals
+
+By the end of this module, you should be able to:
+1. Implement asset pricing models from theory to code
+2. Use coding agents to assist with empirical work
+3. Build reproducible analysis pipelines for your replication project

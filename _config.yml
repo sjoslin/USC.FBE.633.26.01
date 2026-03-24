@@ -1,8 +1,9 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
+title: FBE 633 - Supplementary Empirical Coding
+description: Supplementary coding module for asset pricing
 theme: just-the-docs
 
-url: https://just-the-docs.github.io
+url: https://sjoslin.github.io
+baseurl: /USC.FBE.633.26.01
 
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+  Course GitHub: https://github.com/sjoslin/USC.FBE.633.26.01
