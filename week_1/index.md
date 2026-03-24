@@ -16,7 +16,7 @@ Summer Yue, director of AI alignment at Meta, experienced firsthand how easily a
 
 The agent responded with: _"You're right to be upset"_ - a chilling reminder that alignment researchers aren't immune to misalignment.
 
-![OpenClaw rogue agent](/assets/images/openclaw1.jpeg){: style="width:49%; display:inline-block;"} ![OpenClaw agent response](/assets/images/openclaw2.jpeg){: style="width:49%; display:inline-block;"}
+![OpenClaw rogue agent]({{ site.baseurl }}/assets/images/openclaw1.jpeg){: style="width:49%; display:inline-block;"} ![OpenClaw agent response]({{ site.baseurl }}/assets/images/openclaw2.jpeg){: style="width:49%; display:inline-block;"}
 
 As Yue admitted: _"Nothing humbles you like telling your OpenClaw 'confirm before act' and watching it speedrun deleting your inbox."_
 
