@@ -8,25 +8,4 @@ nav_order: 6
 
 ## Overview
 
-This week covers advanced topics in financial agents and provides time for project work and customization.
-
-## Topics
-
-1. Multi-agent systems
-2. Agent optimization and efficiency
-3. Agent safety and alignment
-4. Project work and customization
-
-## Readings
-
-- [Reading 1]
-- [Reading 2]
-
-## Exercises
-
-[Exercise details]
-
-## Slides
-
-[Link to slides]
-
+In this week, we will work through an empirical demonstration of the equity premium puzzle. We will show how to use coding agents to download the data, write code to analyze it, and produce tables to summarize the results. This will provide an example of how to do a final exercise of replicating the Fama-French results about the cross-section of stock returns. Together this represents a powerful nearly automated pipeline to do sophisticated empirical analysis of financial data.

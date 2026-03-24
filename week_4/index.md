@@ -8,26 +8,4 @@ nav_order: 4
 
 ## Overview
 
-This week explores popular agent frameworks and tools for building coding agents, including LangChain, AutoGen, and custom implementations.
-
-## Topics
-
-1. Agent framework overview
-2. LangChain and agents
-3. Microsoft AutoGen
-4. Building custom agent workflows
-5. Tool calling and function coordination
-
-## Readings
-
-- [Reading 1]
-- [Reading 2]
-
-## Exercises
-
-[Exercise details]
-
-## Slides
-
-[Link to slides]
-
+This week we will sandboxing and why it matters. We will show how to use docker to create containers to isolate files and connection to the outside. We will discuss threat models and discuss the safeguards that a sandbox + git together provide. This combination works to greatly enhance the safety of 'dangerously skip mode' which allows for automation of complex workflows.

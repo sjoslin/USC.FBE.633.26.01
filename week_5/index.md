@@ -8,25 +8,4 @@ nav_order: 5
 
 ## Overview
 
-This week applies agent techniques to real financial use cases including trading strategies, risk analysis, and financial reporting.
-
-## Topics
-
-1. Trading strategy agents
-2. Risk management agents
-3. Financial reporting automation
-4. Sentiment analysis and market monitoring
-
-## Readings
-
-- [Reading 1]
-- [Reading 2]
-
-## Exercises
-
-[Exercise details]
-
-## Slides
-
-[Link to slides]
-
+This week we will talk about LaTeX and reproducibility. We will augment our Great Moderation example by producing a LaTeX document with figures and tables. We will also talk about reproducibility.

@@ -8,24 +8,4 @@ nav_order: 2
 
 ## Overview
 
-data_raw/ structure, .gitignore, CLAUDE.md, basic git workflow, README. Live demo of Claude breaking something and git rewinding it. This is the safety net before they touch any real agent work.
-
-## Topics
-
-1. [Topic 1]
-2. [Topic 2]
-3. [Topic 3]
-4. [Topic 4]
-
-## Readings
-
-- [Reading 1]
-- [Reading 2]
-
-## Exercises
-
-[Exercise details]
-
-## Slides
-
-[Link to slides]
+This week we will discuss Git and Data Organization. Git acts as your undo button to allow you to effectively collaborate with AI agents to generate code safely. We also talk about properly setting up project directories such as keeping secrets, warehousing raw data, and creating persistent context instructions with CLAUDE.md files.

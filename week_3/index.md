@@ -8,25 +8,4 @@ nav_order: 3
 
 ## Overview
 
-This week introduces financial analysis using Python libraries like pandas, NumPy, and financial calculation techniques.
-
-## Topics
-
-1. Data structures for financial data
-2. Time series analysis
-3. Financial calculations (returns, volatility, etc.)
-4. Portfolio analysis basics
-
-## Readings
-
-- [Reading 1]
-- [Reading 2]
-
-## Exercises
-
-[Exercise details]
-
-## Slides
-
-[Link to slides]
-
+This week we will have our first agent session to access data. Using manual approvals, we will pull real personal consumption data from FRED and produce a plot illustrating the Great Moderation. We will see the power of agents but also the cost of manual approval required to prevent potentially destructive commands from the agent.
