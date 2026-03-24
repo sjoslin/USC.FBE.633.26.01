@@ -1,21 +1,21 @@
 ---
-title: Week 2 - Financial Data Sources and APIs
+title: Week 2 - Git + Data Organization
 layout: default
 nav_order: 2
 ---
 
-# Week 2 - Financial Data Sources and APIs
+# Week 2 - Git + Data Organization
 
 ## Overview
 
-This week covers financial data sources, API integration, and how to fetch economic and market data for analysis.
+data_raw/ structure, .gitignore, CLAUDE.md, basic git workflow, README. Live demo of Claude breaking something and git rewinding it. This is the safety net before they touch any real agent work.
 
 ## Topics
 
-1. FRED API and economic data
-2. Stock price APIs (Yahoo Finance, Alpha Vantage, etc.)
-3. Alternative data sources
-4. Data validation and cleaning
+1. [Topic 1]
+2. [Topic 2]
+3. [Topic 3]
+4. [Topic 4]
 
 ## Readings
 
@@ -29,4 +29,3 @@ This week covers financial data sources, API integration, and how to fetch econo
 ## Slides
 
 [Link to slides]
-

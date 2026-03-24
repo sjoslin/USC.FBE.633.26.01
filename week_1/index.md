@@ -1,19 +1,19 @@
 ---
-title: Week 1 - Introduction to Coding Agents
+title: Week 1 - Motivation + Environment
 layout: default
 nav_order: 1
 ---
 
-# Week 1 - Introduction to Coding Agents
+# Week 1 - Motivation + Environment
 
 ## Overview
 
-This week introduces coding agents and their applications in finance. We'll cover the basics of agent architectures, tools available, and how they can be used for financial analysis and decision-making.
+Everyone leaves with Claude Code running, API key in environment, VS Code connected. The bull in china shop framing — Summer Yue story as opening hook. Show them the finished LaTeX table at the start so they know where they're going.
 
 ## Topics
 
-1. What are coding agents?
-2. Agent architectures and patterns
+1. Why coding agents for empirical work?
+2. Agent architectures and guardrails
 3. Tools for finance: language models, code generation
 4. Setting up your development environment
 
@@ -29,4 +29,3 @@ This week introduces coding agents and their applications in finance. We'll cove
 ## Slides
 
 [Link to slides]
-

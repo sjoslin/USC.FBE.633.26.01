@@ -1,10 +1,10 @@
 ---
-title: Week 4 - Agent Frameworks and Tools
+title: Week 4 - Sandboxing
 layout: default
 nav_order: 4
 ---
 
-# Week 4 - Agent Frameworks and Tools
+# Week 4 - Sandboxing
 
 ## Overview
 

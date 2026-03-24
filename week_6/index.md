@@ -1,10 +1,10 @@
 ---
-title: Week 6 - Advanced Topics and Project Work
+title: Week 6 - CRSP + Final Project
 layout: default
 nav_order: 6
 ---
 
-# Week 6 - Advanced Topics and Project Work
+# Week 6 - CRSP + Final Project
 
 ## Overview
 

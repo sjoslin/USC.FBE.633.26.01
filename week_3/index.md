@@ -1,10 +1,10 @@
 ---
-title: Week 3 - Financial Analysis with Python
+title: Week 3 - First Agent Session
 layout: default
 nav_order: 3
 ---
 
-# Week 3 - Financial Analysis with Python
+# Week 3 - First Agent Session
 
 ## Overview
 

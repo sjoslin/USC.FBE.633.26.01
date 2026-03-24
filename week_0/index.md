@@ -54,15 +54,7 @@ To access economic data from the Federal Reserve Economic Data (FRED) platform:
 
 ## API Access
 
-If you do not have a subscription to Claude or OpenAI ChatGPT:
-
-USC students can request API access through the [USC AI Access Initiative](https://ai-access.usc.edu/).
-
-For Claude API access:
-- Check if your USC email provides free access through the [Anthropic AI Education Program](https://www.anthropic.com/education)
-
-For OpenAI API access:
-- Apply for the [OpenAI APIGrant Program](https://openai.com/index/api-grant-program/)
+USC students can request access to OpenAI Codex through [ITS](https://itservices.usc.edu/ai/ai-faqs/).
 
 ---
 

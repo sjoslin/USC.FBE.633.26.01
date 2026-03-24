@@ -1,0 +1,14 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* Wide screen */
+@media (min-width: 1400px) {
+  .side-bar {
+    width: 28rem;
+  }
+  .main-content {
+    margin-left: 28rem;
+  }
+}

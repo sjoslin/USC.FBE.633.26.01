@@ -3,3 +3,6 @@ description: Supplementary coding module for asset pricing
 theme: just-the-docs
 
 url: https://sjoslin.github.io
+
+custom_css:
+  - /assets/css/custom.css

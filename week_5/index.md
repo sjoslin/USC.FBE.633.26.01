@@ -1,10 +1,10 @@
 ---
-title: Week 5 - Financial Agent Applications
+title: Week 5 - LaTeX + Reproducibility
 layout: default
 nav_order: 5
 ---
 
-# Week 5 - Financial Agent Applications
+# Week 5 - LaTeX + Reproducibility
 
 ## Overview
 

@@ -44,38 +44,25 @@ A more nefarious threat is **prompt injection**. A bad actor could post a fake d
 
 These issues highlight the necessity of guardrails and an ability to rewind and recover past checkpoints.
 
-## What You'll Get
-
-- **Setup ready**: A fully configured development environment
-- **Coding agent skills**: Understand how to leverage AI-assisted coding
-- **Financial data access**: API integration for FRED and market data
-- **Python for finance**: Practical tools for asset pricing analysis
-
 ## Structure
 
-| Week | Topic | Description |
-|--|----|--|
-| [Week 0](week_0) | Setup | Development environment configuration |
-| [Week 1](week_1) | Coding agents intro | Agent architectures and tool usage |
-| [Week 2](week_2) | Financial APIs | FRED, stock data, and data access |
-| [Week 3](week_3) | Python for finance | Pandas, NumPy, time series analysis |
-| [Week 4](week_4) | Agent frameworks | LangChain, AutoGen, implementation |
-| [Week 5](week_5) | Financial apps | Trading, risk, reporting agents |
-| [Week 6](week_6) | Advanced topics | Multi-agent systems and project work |
+| Week             | Topic                    | Description                                  |
+| ---------------- | ------------------------ | -------------------------------------------- |
+| [Week 0](week_0) | Setup                    | Development environment configuration        |
+| [Week 1](week_1) | Motivation + Environment | Coding agent introduction and guardrails     |
+| [Week 2](week_2) | Git + Data Organization  | Version control and project structure        |
+| [Week 3](week_3) | First Agent Session      | FRED data access and agent approval workflow |
+| [Week 4](week_4) | Sandboxing               | Docker containers and agent threat model     |
+| [Week 5](week_5) | LaTeX + Reproducibility  | Publication-ready output from data pipeline  |
+| [Week 6](week_6) | CRSP + Final Project     | Equity data and replication example          |
 
 ## Instructor
 
-[Your Name Here]
+Scott Joslin
 
-## Prerequisites
+## What You'll Get
 
-- Familiarity with basic Python programming
-- No prior experience with coding agents required
-
-## Goals
-
-By the end of this module, you should be able to:
-1. Set up a professional Python development environment
-2. Understand how coding agents work and when to use them
-3. Build agents that assist with financial data analysis
-4. Apply these tools to understand asset pricing
+- **Setup ready**: A fully configured development environment
+- **Coding agent skills**: Understand how to leverage AI-assisted coding with guardrails
+- **Financial data access**: API integration for FRED and market data
+- **Coding for finance**: Practical tools for asset pricing analysis
