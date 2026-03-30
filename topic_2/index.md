@@ -38,7 +38,9 @@ In order to give Python (or other programming language) access to our API key, w
 
 1. In VS Code, create a folder for Topic 2 and open it.
 2. In the folder, create a file .env with: FRED_API_KEY=... and save it.
-3. Note: it can be useful to open and close the file explorer by clicking the file icon.
+3. Note: it can be useful to open and close the file explorer by clicking the file icon or using the shortcut.
+
+It is good practice to put the API key in the .env file instead of your actual code for a few reasons. First, it can avoid proliferation of entering the API key. More importantly, it will be more secure when we begin to use git version control. **Security note:** In this case, the API key is still exposed to Claude code. If we don't fully trust Claude code (we shouldn't) this is a potential vulnerability; we'll discuss more on this later.
 
 ---
 
@@ -74,7 +76,7 @@ Notice that when it wants to change the file, it shows you the **diff** in the f
 Now we want to examine the Great Moderation. Compute the rolling 5-year volatility of monthly changes.  Let's also use the real PCE instead of nominal.
 ```
 
-This will almost show the great moderation. There will be a few issues that can be easily addressed.
+This will almost show the great moderation. There will be a few issues that can be easily addressed with some further prompting.
 
 ## Comments on VS Code
 

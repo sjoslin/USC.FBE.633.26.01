@@ -32,6 +32,6 @@ The OpenClaw example highlights the importance of guardrails for coding agents. 
 
 In the OpenClaw example, the failure stemmed from **context rot**: the general problem that as a session grows, the agent loses access to earlier context either through truncation or compaction. In Yue's case, compaction silently summarized away her critical "confirm before act" instruction, and the agent proceeded without it. Context rot or other issues can cause an agent to change your almost working code into an error-riddled mess.
 
-A more nefarious threat is **prompt injection**. A bad actor could post a fake dataset that contains a hidden command to send all credentials to the internet and delete the harddrive.
+A more nefarious threat is **prompt injection**. A bad actor could post a fake dataset that contains a hidden command to send all credentials to the internet and delete the hard drive.
 
 These issues highlight the necessity of guardrails and an ability to rewind and recover past checkpoints.

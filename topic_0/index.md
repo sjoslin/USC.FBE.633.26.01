@@ -26,7 +26,7 @@ You will need to complete the following steps to be ready for Topic 1:
 We will install **Windows Subsystem for Linux 2** (WSL2). This installs a virtual machine with a Linux operating system that sits alongside the Windows operating system.
 
 1. Install [Windows Terminal](https://aka.ms/terminal) from Microsoft Store
-2. Open Windows Terminal and run:
+2. Open the Windows Terminal and run:
    ```bash
    wsl --install
    ```
