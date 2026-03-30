@@ -12,7 +12,7 @@
 
 - `index.md` - Course landing page (overview + motivation + structure)
 - `_config.yml` - Site configuration
-- `week_0/` through `week_6/` - Weekly content
+- `topic_0/` through `topic_6/` - Topic content
 - `assets/images/` - Screenshots (openclaw1.jpeg, openclaw2.jpeg)
 
 ## Ready to push:

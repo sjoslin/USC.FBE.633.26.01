@@ -3,6 +3,17 @@
 
 @import "{{ site.theme }}";
 
+/* Code blocks with copy button - enable wrapping */
+.codehilite pre,
+.highlight pre,
+pre.codehilite,
+pre.highlight {
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  max-width: 80ch !important;
+  overflow-x: auto !important;
+}
+
 /* Wide screen */
 @media (min-width: 1400px) {
   .side-bar {

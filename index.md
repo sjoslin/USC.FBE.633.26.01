@@ -24,15 +24,15 @@ See [Motivation](motivation) for the need for proper guardrails.
 
 ## Structure
 
-| Week             | Topic                    | Description                                  |
-| ---------------- | ------------------------ | -------------------------------------------- |
-| [Week 0](week_0) | Setup                    | Development environment configuration        |
-| [Week 1](week_1) | Motivation + Environment | Coding agent introduction and guardrails     |
-| [Week 2](week_2) | Git + Data Organization  | Version control and project structure        |
-| [Week 3](week_3) | First Agent Session      | FRED data access and agent approval workflow |
-| [Week 4](week_4) | Sandboxing               | Docker containers and agent threat model     |
-| [Week 5](week_5) | LaTeX + Reproducibility  | Publication-ready output from data pipeline  |
-| [Week 6](week_6) | CRSP + Final Project     | Equity data and replication example          |
+| Topic | Description                                  |
+| ----- | -------------------------------------------- |
+| [0. Setup](topic_0) | Development environment configuration        |
+| [1. Motivation](topic_1) | Coding agent introduction and guardrails     |
+| [2. First Agent Session using API Keys](topic_2) | FRED data access and agent approval workflow |
+| [3. Git + Data Organization](topic_3) | Version control and project structure        |
+| [4. Sandboxing](topic_4) | Docker containers and agent threat model     |
+| [5. LaTeX + Reproducibility](topic_5) | Publication-ready output from data pipeline  |
+| [6. CRSP + Final Project](topic_6) | Equity data and replication example          |
 
 ## Instructor
 

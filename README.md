@@ -16,10 +16,10 @@ This supplementary module covers the usage of coding agents and related tools fo
 
 ## Structure
 
-| Week | Topic |
+| Topic | Description |
 |--|----|
 | 0 | Setup and configuration |
-| 1 | Introduction to coding agents |
+| 1 | Introduction to coding agents and guardrails |
 | 2 | Financial data sources and APIs |
 | 3 | Financial analysis with Python |
 | 4 | Agent frameworks and tools |
@@ -29,7 +29,7 @@ This supplementary module covers the usage of coding agents and related tools fo
 ## Repository Structure
 
 - `index.md` - Course home page
-- `week_X/` - Weekly content directories
+- `topic_X/` - Topic content directories
 - `assets/images/` - Course images and screenshots
 
 ## Instructor
