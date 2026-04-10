@@ -5,5 +5,8 @@ theme: just-the-docs
 url: https://sjoslin.github.io
 baseurl: /USC.FBE.633.26.01
 
+mermaid:
+  version: "10.9.0"
+
 custom_css:
   - /assets/css/custom.css

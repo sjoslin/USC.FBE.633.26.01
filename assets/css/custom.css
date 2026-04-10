@@ -14,6 +14,13 @@ pre.highlight {
   overflow-x: auto !important;
 }
 
+/* Output blocks — distinct from command blocks */
+.output pre,
+.output code {
+  background-color: #f0f4f8 !important;
+  border-left: 3px solid #94a3b8 !important;
+}
+
 /* Wide screen */
 @media (min-width: 1400px) {
   .side-bar {
