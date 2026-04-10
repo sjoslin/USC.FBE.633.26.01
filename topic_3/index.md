@@ -592,7 +592,7 @@ There is much more to git that we won't cover here. Some topics that are worth l
 
 - **GitHub** — cloud synchronization and collaboration. Push your local repository to GitHub so it's backed up remotely and others can access it. This is also how you submit and share work.
 - **Branching** — create offshoots of `main` to work on a feature or fix in isolation, then merge it back when it's ready. Useful when multiple people (or agents) are working on the same codebase.
-- **Cloning** — download someone else's remote repository to your machine. This is how you use open-source code, starter templates, and shared course materials. This is how I made this course website: clone a repository and create markdown files for each topic.
+- **Cloning** — download someone else's remote repository to your machine. This is how you use open-source code, starter templates, and shared course materials. This is how I made this course website: clone a repository and create markdown files for each topic. You can see the [commit history for this site on GitHub](https://github.com/sjoslin/USC.FBE.633.26.01/commits/main).
 
 These are useful, but in this course we focus on the tools most useful for safe and efficient use of coding agents: committing, diffing, and rewinding.
 
