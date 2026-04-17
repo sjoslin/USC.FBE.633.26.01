@@ -4,7 +4,7 @@ layout: default
 nav_order: 3
 ---
 
-# Topic 3 — Git + Data Organization
+# Topic 3: Git + Data Organization
 
 ## Overview
 
@@ -27,7 +27,7 @@ The agent will suggest a clean separation of config, raw data, processed data, f
 
 ```text
 fred_project/
-├─ .env                  # API key — never committed
+├─ .env                  # API key (never committed)
 ├─ .gitignore
 ├─ README.md
 ├─ requirements.txt
@@ -45,7 +45,7 @@ fred_project/
 
 The key principles:
 
-- **Secrets** (`.env`) stay in the root, never committed — we'll enforce this shortly with `.gitignore`
+- **Secrets** (`.env`) stay in the root, never committed. We'll enforce this shortly with `.gitignore`
 - **Raw data** (`data_raw/`) is separated from **processed data** (`data_processed/`) so you can always re-derive; also important for replication
 - **Scripts** are in `src/`, not scattered in the root
 - **Outputs** (figures, tables) go in their own directory
@@ -78,7 +78,11 @@ Git solves both problems:
 - Every snapshot gets a unique ID so you always know exactly what changed and when
 - You can **rewind** to any previous snapshot instantly
 
-**Why this matters for coding agents:** Claude Code generates and rewrites code fast. One bad agent run can destroy a working script. With git, you just rewind to the last good commit. Without it, you're back to `paper_FINAL_FINAL_actuallyFinal.docx`.
+**Why this matters for coding agents:** Coding agents generate and rewrite code fast. One bad agent run can destroy a working script. Even in "plan mode," where the agent is only supposed to think, not act, things can go wrong:
+
+![Agent violating constraints in plan mode]({{ site.baseurl }}/assets/images/opencode_planning.png){: style="max-width:100%; display:block; margin:20px auto;"}
+
+Here the agent admits it created and modified files when it was explicitly told not to. With git, you just rewind to the last good commit. Without it, you're back to `paper_FINAL_FINAL_actuallyFinal.docx`.
 
 ---
 
@@ -99,9 +103,9 @@ flowchart LR
     style C fill:#d1fae5,stroke:#059669
 ```
 
-- **Working directory** — the files you see and edit
-- **Staging area** — a holding pen where you choose which changes to include in the next snapshot
-- **Commit** — a permanent, labeled snapshot of the staged files
+- **Working directory**: the files you see and edit
+- **Staging area**: a holding pen where you choose which changes to include in the next snapshot
+- **Commit**: a permanent, labeled snapshot of the staged files
 
 This separation gives you control: you can change ten files but only commit three of them.
 
@@ -126,7 +130,7 @@ ls .git/
 cat .git/HEAD
 ```
 
-`HEAD` is just a text file that says which branch you're on. That's it — no magic.
+`HEAD` is just a text file that says which branch you're on.
 
 ### Create the project files
 
@@ -145,7 +149,7 @@ to 2024 and saves the result as a CSV in data_raw/. Create the directories if th
 exist. Then run the script.
 ```
 
-Claude will create `src/fetch_pce.py`, the `src/` and `data_raw/` directories, and run it to produce the CSV — all following the project layout we established.
+Claude will create `src/fetch_pce.py`, the `src/` and `data_raw/` directories, and run it to produce the CSV, all following the project layout we established.
 
 ### Check the status
 
@@ -154,11 +158,11 @@ ls -al
 git status
 ```
 
-`ls -al` shows all files including hidden ones (`.env`, `.git/`). `git status` shows what git thinks about them — you'll see **untracked** files for everything the agent just created. Git sees them but isn't tracking them yet.
+`ls -al` shows all files including hidden ones (`.env`, `.git/`). `git status` shows what git thinks about them. You'll see **untracked** files for everything the agent just created. Git sees them but isn't tracking them yet.
 
 ### Protect your secrets with .gitignore
 
-We do **not** want to commit `.env` — it contains your API key. Create a `.gitignore`:
+We do **not** want to commit `.env` because it contains your API key. Create a `.gitignore`:
 
 ```bash
 echo ".env" > .gitignore
@@ -257,7 +261,7 @@ flowchart TB
     style C1 fill:#dbeafe,stroke:#2563eb
 ```
 
-`HEAD` is just a pointer — it tells git where you are. It points to a branch name (`refs/heads/main`), which points to the latest commit. Each commit points back to its parent. The next commit you make will become the new tip, with commit 2 as its parent.
+`HEAD` is just a pointer that tells git where you are. It points to a branch name (`refs/heads/main`), which points to the latest commit. Each commit points back to its parent. The next commit you make will become the new tip, with commit 2 as its parent.
 
 You can follow this chain yourself:
 
@@ -285,7 +289,7 @@ add backup of raw data, make read-only
 
 {: .output }
 
-A **commit** stores: a **tree** SHA (the snapshot of your directory), a **parent** SHA (the previous commit), and the message. The tree SHA is the key — it's the snapshot of what your project looked like at this point.
+A **commit** stores: a **tree** SHA (the snapshot of your directory), a **parent** SHA (the previous commit), and the message. The tree SHA is the key: it's the snapshot of what your project looked like at this point.
 
 ### What's inside the tree?
 
@@ -339,11 +343,11 @@ data_raw/
 
 {: .output }
 
-Both files point to **the same blob** (`9daeafb`). There aren't two copies of the data stored in git — there's one blob, and two tree entries that reference it. This is content-addressed storage in action: same contents, same SHA, same blob. Contrast this with the `paper_FINAL_FINAL.docx` world where every copy doubles the disk usage.
+Both files point to **the same blob** (`9daeafb`). There aren't two copies of the data stored in git. There's one blob, and two tree entries that reference it. This is content-addressed storage in action: same contents, same SHA, same blob. Contrast this with the `paper_FINAL_FINAL.docx` world where every copy doubles the disk usage.
 
 ### The full picture
 
-Here's what commit 2 contains — a tree that points to sub-trees and blobs:
+Here's what commit 2 contains. The commit points to a tree, which points to sub-trees and blobs:
 
 ```mermaid
 flowchart TB
@@ -371,14 +375,14 @@ flowchart TB
     style B_py fill:#dbeafe,stroke:#2563eb
 ```
 
-Both `fred_pce_indpro.csv` and `fred_pce_indpro_backup.csv` in the `data_raw/` tree point to the same blob `9daeafb`. Git doesn't store duplicates — if the content is the same, it's the same object.
+Both `fred_pce_indpro.csv` and `fred_pce_indpro_backup.csv` in the `data_raw/` tree point to the same blob `9daeafb`. Git doesn't store duplicates. If the content is the same, it's the same object.
 
 ### Git Object Types
 
 | Object     | What it stores                                                           |
 | ---------- | ------------------------------------------------------------------------ |
 | **Blob**   | Raw file contents, identified by its SHA                                 |
-| **Tree**   | A directory listing — maps filenames to blob or sub-tree SHAs            |
+| **Tree**   | A directory listing that maps filenames to blob or sub-tree SHAs         |
 | **Commit** | A snapshot: points to a tree, plus author, message, and parent commit(s) |
 | **Tag**    | A named pointer to a commit (not demoed here)                            |
 
@@ -386,7 +390,7 @@ Both `fred_pce_indpro.csv` and `fred_pce_indpro_backup.csv` in the `data_raw/` t
 
 ## 7. Making a Change
 
-Now let's evolve the project — add the analysis script. Ask Claude Code:
+Now let's evolve the project and add the analysis script. Ask Claude Code:
 
 ```text
 Write a script in src/plot_pce_yoy.py that reads the CSV from data_raw/, computes
@@ -416,7 +420,7 @@ Before accepting, look at the diff Claude shows you. You can also see it yoursel
 git diff src/fetch_pce.py
 ```
 
-`git diff` shows you **exactly** what changed — the two lines where the year was modified. This is far more useful than comparing `paper_final_v2.docx` to `paper_final_v3.docx`.
+`git diff` shows you **exactly** what changed: the two lines where the year was modified. This is far more useful than comparing `paper_final_v2.docx` to `paper_final_v3.docx`.
 
 ```bash
 git add src/fetch_pce.py
@@ -428,20 +432,20 @@ git --no-pager log --oneline       # four commits
 
 ## 8. Rewinding
 
-This is the payoff — the reason we set all of this up. There are two ways to rewind in git.
+This is the payoff. There are two ways to rewind in git.
 
 ### Two important pointers
 
 Git tracks your position with two pointers:
 
-- **HEAD** — "Where am I right now?" Usually points to a branch name.
-- **Branch pointer** (`main`) — "What is the latest commit on this branch?" Moves forward every time you commit.
+- **HEAD**: "Where am I right now?" Usually points to a branch name.
+- **Branch pointer** (`main`): "What is the latest commit on this branch?" Moves forward every time you commit.
 
 Right now they work together: HEAD → main → commit 4 (your latest). Let's see both ways to rewind.
 
 ### Look-back rewind (safe)
 
-Suppose you want to check what the project looked like at commit 1 — maybe to verify the original fetch script before the agent changed it. First, find the SHA:
+Suppose you want to check what the project looked like at commit 1, maybe to verify the original fetch script before the agent changed it. First, find the SHA:
 
 ```bash
 git --no-pager log --oneline
@@ -462,7 +466,7 @@ Now checkout the first commit:
 git checkout e4f5a6b
 ```
 
-Git will warn you about "detached HEAD" — this just means HEAD is pointing directly at a commit instead of at a branch. Here's what happened to the pointers:
+Git will warn you about "detached HEAD." This just means HEAD is pointing directly at a commit instead of at a branch. Here's what happened to the pointers:
 
 ```mermaid
 flowchart TB
@@ -494,23 +498,23 @@ fetch_pce.py
 
 {: .output }
 
-No `plot_pce_yoy.py` — it didn't exist yet at commit 1. Now go back to the latest:
+No `plot_pce_yoy.py` because it didn't exist yet at commit 1. Now go back to the latest:
 
 ```bash
 git checkout main
 ```
 
-HEAD snaps back to main, which still points to commit 4. All your files are restored. This is a safe operation — you're just looking around, nothing is deleted.
+HEAD snaps back to main, which still points to commit 4. All your files are restored. This is a safe operation: you're just looking around, nothing is deleted.
 
 ### Destructive rewind (use with caution)
 
-Sometimes you don't just want to look back — you want to **undo** commits entirely. Suppose Claude Code made a mess across the last two commits and you want to go back to commit 2 for real:
+Sometimes you don't just want to look back. You want to **undo** commits entirely. Suppose Claude Code made a mess across the last two commits and you want to go back to commit 2 for real:
 
 ```bash
 git reset --hard a1b2c3d
 ```
 
-This moves **both** HEAD and main back to commit 2. Commits 3 and 4 are abandoned — the files they changed are gone from your working directory. This is destructive and cannot be easily undone.
+This moves **both** HEAD and main back to commit 2. Commits 3 and 4 are abandoned. The files they changed are gone from your working directory. This is destructive and cannot be easily undone.
 
 ```mermaid
 flowchart TB
@@ -530,7 +534,7 @@ flowchart TB
     style C4 fill:#f3f4f6,stroke:#d1d5db,color:#9ca3af
 ```
 
-Commits 3 and 4 still exist in git's object store temporarily, but nothing points to them anymore — they're effectively gone.
+Commits 3 and 4 still exist in git's object store temporarily, but nothing points to them anymore. They're effectively gone.
 
 **When to use each:**
 
@@ -551,7 +555,7 @@ Everything we did on the command line maps directly to VS Code's GUI.
 
 Open the **Source Control** panel by clicking the branch icon in the left sidebar (or `Ctrl+Shift+G` / `Cmd+Shift+G`).
 
-- **Status**: The panel shows modified, untracked, and staged files automatically — no need to run `git status`. File icons get color-coded badges: **U** = untracked, **M** = modified, **A** = added.
+- **Status**: The panel shows modified, untracked, and staged files automatically. No need to run `git status`. File icons get color-coded badges: **U** = untracked, **M** = modified, **A** = added.
 - **Staging**: Hover over a file under "Changes" and click the **+** icon to stage it. Click the **+** next to the "Changes" header to stage everything. You can also open a file's diff and right-click to stage individual lines or selections.
 - **Committing**: Type your message in the text box at the top of the panel and click the checkmark (or press `Cmd+Enter` / `Ctrl+Enter`).
 - **Diffs**: Click any modified file in the panel to open a side-by-side diff with red (removed) and green (added) highlighting. This is one of the biggest advantages of the GUI over the command line.
@@ -569,7 +573,7 @@ This gives you a visual commit chain generated live from your repository. Click 
 ### Rewinding in VS Code
 
 - **Look-back** (`checkout`): In Git Graph, right-click a commit → **Checkout**. VS Code will warn about detached HEAD. To return, click the branch name in the bottom-left status bar → select `main`.
-- **Destructive** (`reset --hard`): In Git Graph, right-click a commit → **Reset Current Branch to This Commit** → select **Hard**. Same warning as the CLI — this is irreversible.
+- **Destructive** (`reset --hard`): In Git Graph, right-click a commit → **Reset Current Branch to This Commit** → select **Hard**. Same warning as the CLI: this is irreversible.
 
 ### CLI vs GUI
 
@@ -590,9 +594,9 @@ The CLI teaches you what git is doing. The GUI makes it faster once you understa
 
 There is much more to git that we won't cover here. Some topics that are worth learning as your projects grow:
 
-- **GitHub** — cloud synchronization and collaboration. Push your local repository to GitHub so it's backed up remotely and others can access it. This is also how you submit and share work.
-- **Branching** — create offshoots of `main` to work on a feature or fix in isolation, then merge it back when it's ready. Useful when multiple people (or agents) are working on the same codebase.
-- **Cloning** — download someone else's remote repository to your machine. This is how you use open-source code, starter templates, and shared course materials. This is how I made this course website: clone a repository and create markdown files for each topic. You can see the [commit history for this site on GitHub](https://github.com/sjoslin/USC.FBE.633.26.01/commits/main).
+- **GitHub**: cloud synchronization and collaboration. Push your local repository to GitHub so it's backed up remotely and others can access it. This is also how you submit and share work.
+- **Branching**: create offshoots of `main` to work on a feature or fix in isolation, then merge it back when it's ready. Useful when multiple people (or agents) are working on the same codebase.
+- **Cloning**: download someone else's remote repository to your machine. This is how you use open-source code, starter templates, and shared course materials. This is how I made this course website: clone a repository and create markdown files for each topic. You can see the [commit history for this site on GitHub](https://github.com/sjoslin/USC.FBE.633.26.01/commits/main).
 
 These are useful, but in this course we focus on the tools most useful for safe and efficient use of coding agents: committing, diffing, and rewinding.
 
@@ -603,7 +607,7 @@ These are useful, but in this course we focus on the tools most useful for safe 
 | Concept               | What it means                                                   |
 | --------------------- | --------------------------------------------------------------- |
 | **Blob**              | Raw file contents, stored by hash                               |
-| **Tree**              | A directory — maps filenames to blobs or sub-trees              |
+| **Tree**              | A directory that maps filenames to blobs or sub-trees           |
 | **Commit**            | A snapshot pointing to a tree, with metadata and a parent       |
 | **HEAD**              | Pointer to your current position (usually a branch)             |
 | **Ref**               | A human-readable name (like `main`) that points to a commit SHA |

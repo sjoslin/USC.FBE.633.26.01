@@ -1,0 +1,31 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb}
+
+% Macro: shorthand for the risk-neutral measure.
+\newcommand{\Q}{\mathbb{Q}}
+
+\title{My First LaTeX Document}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+This document demonstrates the basic LaTeX workflow. In later sections of the course we will produce data and figures from a data pipeline, as well as adding references from a \verb|.bib| file.
+
+\section{Math: Inline and Displayed}
+Hello, world. The Pythagorean theorem says
+\begin{equation}
+  a^2 + b^2 = c^2.
+\end{equation}
+We can also write math inline: a right triangle with legs $a = 3$ and $b = 4$ has hypotenuse $c = 5$.
+
+\section{A Sliver of Asset Pricing}
+Under the risk-neutral measure $\Q$, the price of a payoff $X_T$ at date $T$ is
+\begin{equation}
+  P_0 = E^{\Q}\left[ e^{-\int_0^T r_s\,ds} \, X_T \right].
+\end{equation}
+The macro \verb|\Q| expands to $\Q$ --- every reference to the risk-neutral measure uses the same symbol, and if we ever change notation we change it in one place.
+\end{document}

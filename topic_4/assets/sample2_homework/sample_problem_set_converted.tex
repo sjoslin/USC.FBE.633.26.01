@@ -1,0 +1,204 @@
+% Converted from sample_problem_set_source.pdf by an AI agent, in one
+% pass from the PDF alone (no source .tex was available). The solution
+% boxes are filled in with worked answers to show what a finished
+% submission would look like.
+
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage[most]{tcolorbox}
+\usepackage[margin=1in]{geometry}
+\usepackage{parskip}
+
+% Solution box: blue-tinted, bold "Solution:" lead-in, roughly matching
+% the appearance of the boxes in the source PDF.
+\newtcolorbox{solution}{
+  colback=blue!4!white,
+  colframe=blue!45!black,
+  boxrule=0.5pt,
+  arc=1.5pt,
+  left=6pt, right=6pt, top=5pt, bottom=5pt,
+  before upper={\textbf{Solution:}\ },
+}
+
+\title{Problem Set 0: Math and Statistics Review \\
+       \large USC Marshall --- Financial Derivatives FBE 459}
+\author{Scott Joslin}
+\date{Spring 2026 \\ (Due: Thursday January 22, 11:59 PM)}
+
+\begin{document}
+\maketitle
+
+\noindent\emph{If possible, please write your answer on a printed copy of
+the problem set and submit a scan/photograph of your solutions. Show your
+work cleanly and write out the formulas that you used to solve the
+problems. Circle your final answers. You may collaborate freely with your
+classmates. You may freely consult AI such as ChatGPT to assist you.
+However, you should not ask it to directly solve the problem and you must
+write your answer in your own words. Please give credit to any source of
+assistance (reference, person, AI, etc.) with the assignment.}
+
+\medskip
+
+\noindent\emph{This problem set is graded on completeness. Review the
+posted solutions to check your answers. These topics will be revisited
+later in the course.}
+
+\section*{Problem 1}
+
+\textbf{Derivatives.} Suppose that $W(t)$ represents your wealth at time
+$t$. Say at that your wealth has the derivative:
+\begin{equation}
+  W'(t) \equiv \frac{dW}{dt} = 0.12 \times W(t). \tag{$*$}
+\end{equation}
+
+\begin{enumerate}
+  \item[(a)] If time is measured in years and wealth is measured in
+  dollars, what are the units of $W'(t)$?
+  \begin{solution}
+  Dollars per year (\$/year). A derivative has units of the numerator
+  divided by the denominator: $dW$ is in dollars, $dt$ is in years.
+  \end{solution}
+
+  \item[(b)] In english words, what does the derivative $dW/dt$ mean?
+  \begin{solution}
+  The instantaneous rate at which wealth is changing with respect to
+  time --- i.e., how fast wealth is growing (or shrinking) at that exact
+  moment, in dollars per year.
+  \end{solution}
+
+  \item[(c)] Recall that the derivative is the instantaneous rate of
+  change. For a small time interval, $\Delta t > 0$, we can approximate
+  the change in wealth by:
+  \begin{equation*}
+    \frac{\Delta W}{\Delta t} \approx W'(t_0) = 0.12 \times W(t_0).
+  \end{equation*}
+  Here, $\Delta W = W(t_1) - W(t_0)$ and $\Delta t = t_1 - t_0$. Based on
+  this approximation, if you start with \$100 at $t = 0$ (so that $W(0) =
+  \$100$), approximately what would $W(1/12)$ be?
+  \begin{solution}
+  Using the approximation with $W(0) = \$100$, $\Delta t = 1/12$:
+  \begin{equation*}
+    \Delta W \approx 0.12 \times W(0) \times \Delta t
+                   = 0.12 \times 100 \times \tfrac{1}{12}
+                   = \$1.
+  \end{equation*}
+  So $W(1/12) \approx 100 + 1 = \boxed{\$101}$.
+  \end{solution}
+\end{enumerate}
+
+\noindent\textbf{Note:} you won't be asked to do things like: find the
+derivative of $f(x) = 3x^2$; you will be expected to use concepts like
+these.
+
+\section*{Problem 2}
+
+\textbf{Partial Derivatives.} A common approach to for stock valuation
+that you probably learned in your first finance class is the Gordon
+growth model. Under certain assumptions, this model states that:
+\begin{equation*}
+  P_0 = \frac{D_1}{r_{cc} - g}
+\end{equation*}
+where $P_0$ is the current price of the stock, $D_1$ is the expected
+dividend at $t = 1$, $r_{cc}$ is the cost of capital, and $g$ is the
+expected growth rate of dividends. Recall that the cost of capital is
+the risk-adjusted discount rate:
+\begin{equation*}
+  r_{cc} = r_{\text{risk-free}} + (\text{premium}).
+\end{equation*}
+This formula expresses the price as a function of three variables:
+$(D_1, r_{cc}, g)$.
+
+\begin{enumerate}
+  \item[(a)] In english words, what does the partial derivative
+  $\dfrac{\partial P_0}{\partial r_{cc}}$ represent?
+  \begin{solution}
+  The sensitivity of the current stock price to a small change in the
+  cost of capital, \emph{holding the expected dividend $D_1$ and growth
+  rate $g$ fixed}. Concretely: how many dollars the price moves per unit
+  change in $r_{cc}$.
+  \end{solution}
+
+  \item[(b)] Should the partial derivative $\dfrac{\partial P_0}{\partial r_{cc}}$
+  be positive or negative?
+  \begin{solution}
+  Negative. A higher discount rate makes future dividends worth less
+  today, so the price falls. (You can also verify algebraically: the
+  denominator $r_{cc} - g$ grows with $r_{cc}$, shrinking $P_0$.)
+  \end{solution}
+
+  \item[(c)] Suppose that $D_1 = \$1$, $r_{cc} = 10\%$, and $g = 5\%$ so
+  that $P = \$20$. Suppose that you are given that
+  $\dfrac{\partial P}{\partial r_{cc}} = -\$400$. If $r_{cc}$ increases
+  from 10\% to 10.1\% (an increase of $\Delta r_{cc} = 0.01$),
+  approximately how much should the price change by if the dividend
+  level and growth rate stay the same?
+  \begin{solution}
+  Using the linear approximation,
+  \begin{equation*}
+    \Delta P \approx \frac{\partial P}{\partial r_{cc}} \cdot \Delta r_{cc}
+             = -\$400 \times 0.001 = -\$0.40.
+  \end{equation*}
+  (Here $\Delta r_{cc} = 0.001$ corresponds to the $10\% \to 10.1\%$
+  move, i.e.\ a $0.1$ percentage-point increase written in decimal
+  form.) So the new price is approximately $P \approx \$20 - \$0.40
+  = \boxed{\$19.60}$.
+  \end{solution}
+\end{enumerate}
+
+\noindent\textbf{Note:} For part (b), you could compute a formula using
+rules from calculus. The question is asking you to think intuitively
+without actually taking the derivative.
+
+\section*{Problem 3}
+
+\textbf{Expectation and Volatility.} Suppose that a certain stock will
+either have a return of $+20\%$ or $-10\%$. There are no other
+possibilities. There is a 60\% (40\%) probability that the return will be
+$+20\%$ ($-10\%$).
+
+What is the expected return of the stock?
+
+\begin{solution}
+\begin{equation*}
+  E[R] = 0.6 \times 20\% + 0.4 \times (-10\%) = 12\% - 4\% = \boxed{8\%}.
+\end{equation*}
+\end{solution}
+
+\section*{Problem 4}
+
+\textbf{Normal distribution.}
+
+\begin{enumerate}
+  \item[(a)] \textbf{(10 points)} Suppose that the random variable $Z$
+  follows the standard normal distribution. That is, $Z$ has a normal
+  distribution with mean 0 and variance of 1. Find $P(Z < 1)$. You will
+  need a standard normal table or program such as Excel.
+  \begin{solution}
+  From the standard normal CDF (or \texttt{=NORM.S.DIST(1, TRUE)} in
+  Excel):
+  \begin{equation*}
+    P(Z < 1) = \Phi(1) \approx \boxed{0.8413}.
+  \end{equation*}
+  \end{solution}
+
+  \item[(b)] \textbf{(10 points)} Suppose that the a certain stock return
+  has a normal distribution with mean 10\% and volatility of 30\%. Find
+  the probability that the stock return is less than 40\%. To find this,
+  first compute the $Z$-score:
+  \begin{equation*}
+    Z = \frac{R - \mu_R}{\sigma_R}
+  \end{equation*}
+  \begin{solution}
+  With $\mu_R = 10\%$, $\sigma_R = 30\%$, and $R = 40\%$:
+  \begin{equation*}
+    Z = \frac{40\% - 10\%}{30\%} = 1,
+  \end{equation*}
+  so
+  \begin{equation*}
+    P(R < 40\%) = P(Z < 1) = \Phi(1) \approx \boxed{0.8413}.
+  \end{equation*}
+  \end{solution}
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,57 @@
+% Top-level report for the Campbell-Shiller replication pipeline.
+% This file lives next to the other samples so students can see the
+% full document, but it only compiles inside topic.04/sample4_empirical/
+% latex/ where the pipeline (one dir up) produces ../outputs/yields.png,
+% ../outputs/summary.tex, and ../outputs/cs_table.tex.
+
+\documentclass{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{threeparttable}
+\usepackage[margin=1in]{geometry}
+
+\title{The Campbell-Shiller Puzzle: \\
+       A Replication with GSW Fitted Zero-Coupon Yields}
+\author{FBE 633 --- Topic 4 Example}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+Following Dai and Singleton (2002, Table 1), we estimate the Campbell-Shiller
+long-rate regression
+\begin{equation}
+  R^{n-1}_{t+1} - R^n_t = \alpha_n + \phi_n \cdot \frac{R^n_t - r_t}{n - 1} + \varepsilon_{t+1},
+  \label{eq:cs}
+\end{equation}
+where $R^n_t$ is the $n$-year zero-coupon yield and $r_t \equiv R^1_t$ is the short rate.
+Under the expectations hypothesis, $\phi_n = 1$ for all $n$.
+
+We use Gurkaynak-Sack-Wright fitted zero-coupon Treasury yields, monthly,
+1985--present, with $n \in \{2, 3, \ldots, 10\}$ years.
+
+\section{Yield Data}
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.95\linewidth]{../outputs/yields.png}
+  \caption{GSW fitted zero-coupon Treasury yields, 1985--present.}
+  \label{fig:yields}
+\end{figure}
+
+\input{../outputs/summary.tex}
+
+\section{Campbell-Shiller Regression}
+
+\input{../outputs/cs_table.tex}
+
+The classical pattern reappears: $\phi_n$ is significantly below unity at
+every maturity, and becomes more negative with $n$. The expectations
+hypothesis is rejected, and the rejection deepens with maturity.
+
+\end{document}

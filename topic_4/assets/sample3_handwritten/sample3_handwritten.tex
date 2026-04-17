@@ -1,0 +1,85 @@
+% Translated from sample_notes.pdf (handwritten whiteboard photos on bond
+% excess returns) by an AI agent. The source was a phone-quality scan of
+% marker-on-paper math; the goal is a clean beamer deck that covers the
+% same derivation, not a pixel-perfect reproduction of the handwriting.
+
+\documentclass{beamer}
+
+\usetheme{Madrid}
+\usepackage{amsmath, amssymb}
+
+\title{Bond Excess Returns and the Expectations Hypothesis}
+\author{FBE 633 --- Topic 4 Example}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Notation}
+  \begin{itemize}
+    \item $y^n_t$ = $n$-year continuously compounded yield at date $t$.
+    \item $P^n_t = e^{-y^n_t \cdot n}$
+      \begin{itemize}
+        \item price at time $t$ of an $n$-year zero-coupon bond paying \$1 at time $t+n$.
+      \end{itemize}
+    \item $r^n_{t+1}$ = log return from holding the $n$-year zero from $t$ to $t+1$:
+      \begin{equation*}
+        r^n_{t+1} = \log P^{n-1}_{t+1} - \log P^n_t
+                  = -(n-1)\, y^{n-1}_{t+1} + n\, y^n_t.
+      \end{equation*}
+    \item $xr^n_{t+1}$ = log excess return:
+      \begin{equation*}
+        xr^n_{t+1} = r^n_{t+1} - y^1_t.
+      \end{equation*}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Expectations Hypothesis}
+  Under EH, log excess returns are unforecastable:
+  \begin{equation*}
+    xr^n_{t+1} = \alpha + \varepsilon_{t+1}.
+  \end{equation*}
+
+  \textbf{Note:}
+  \begin{equation*}
+    xr^n_{t+1} = -(n-1)\, y^{n-1}_{t+1} + n\, y^n_t - y^1_t.
+  \end{equation*}
+\end{frame}
+
+\begin{frame}{Implication for Yield Changes}
+  EH $\Rightarrow$
+  \begin{equation*}
+    y^{n-1}_{t+1} - y^n_t
+      = -\frac{1}{n-1}\,\alpha \;+\; \frac{y^n_t - y^1_t}{n-1} \;-\; \varepsilon_{t+1}.
+  \end{equation*}
+
+  \vspace{0.5em}
+  Or, in regression form:
+  \begin{equation*}
+    y^{n-1}_{t+1} - y^n_t = \alpha_0 + \alpha_1 \cdot \text{slope}_n + e_t,
+    \quad \text{with}\ \alpha_1 = 1.
+  \end{equation*}
+
+  \vspace{0.5em}
+  \begin{center}
+    \fbox{\textbf{Higher slope predicts higher future yields.}}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Why This Matters}
+  \begin{itemize}
+    \item EH gives a sharp, testable prediction: the slope coefficient is exactly 1.
+    \item Campbell-Shiller (1991) and Dai-Singleton (2002) show empirically:
+      \begin{itemize}
+        \item $\alpha_1$ is \emph{negative}, not $+1$.
+        \item It gets \emph{more} negative as maturity $n$ grows.
+      \end{itemize}
+    \item Interpretation: time-varying risk premia, not just rational expectations of future short rates, drive the yield curve.
+    \item We replicate this in section 5 of today's lecture using FRED yields.
+  \end{itemize}
+\end{frame}
+
+\end{document}

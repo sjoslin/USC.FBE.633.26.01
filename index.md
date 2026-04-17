@@ -30,8 +30,8 @@ See [Motivation](motivation) for the need for proper guardrails.
 | [1. Motivation](topic_1) | Coding agent introduction and guardrails     |
 | [2. First Agent Session using API Keys](topic_2) | FRED data access and agent approval workflow |
 | [3. Git + Data Organization](topic_3) | Version control and project structure        |
-| [4. Sandboxing](topic_4) | Docker containers and agent threat model     |
-| [5. LaTeX + Reproducibility](topic_5) | Publication-ready output from data pipeline  |
+| [4. LaTeX](topic_4) | Publication-ready output, AI-assisted authoring, Campbell-Shiller replication |
+| [5. Sandboxing](topic_5) | Docker containers and agent threat model     |
 | [6. CRSP + Final Project](topic_6) | Equity data and replication example          |
 
 ## Instructor
